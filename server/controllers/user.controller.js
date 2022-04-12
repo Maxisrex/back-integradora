@@ -11,11 +11,9 @@ userCtrl.createUser = async (req,res) => {
     const newUsr = new user({
         tName : req.body.tName,
         tLastName:req.body.tLastName,
-        nAge: req.body.nAge,
-        tNickName:req.body.tNickName,
+        tLastName2:req.body.tLastName2,
         tEmail:req.body.tEmail,
         tPassword:req.body.tPassword,
-        tImage:req.body.tImage
     });
     await newUsr.save();
     res.json({
@@ -41,26 +39,8 @@ userCtrl.getUser = async (req,res) => {
     res.json(find);
 };
 
-userCtrl.editEmployee = async (req,res) => {
-    const { id } = req.params;
-    const newUsr = {
-        name : req.body.name,
-        role : req.body.role,
-        password : req.body.password,
-        user: req.body.user
-    }
-    //(id, objeto nuevo, si no existe, crealo)
-    await user.findByIdAndUpdate(id, {$set: newUsr}, {new:true});
-    res.json({
-        status: 'Employee update'
-    });
-};
 
-userCtrl.deleteEmployee = async (req,res) => {
-    await user.findByIdAndRemove(req.params.id);
-    res.json({
-        status: 'Employee deleted'
-    });
-};
+
+
 
 module.exports = userCtrl;

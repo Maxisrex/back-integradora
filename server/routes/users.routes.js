@@ -11,10 +11,6 @@ router.post('/updateUser',userCtrl.createUser);
 
 router.post('/logginUser',userCtrl.logginUser);
 
-router.get('/userid',userCtrl.getUser);
 
-router.put('/:id',userCtrl.editEmployee);
-
-router.delete('/:id',userCtrl.deleteEmployee);
 
 module.exports = router;
