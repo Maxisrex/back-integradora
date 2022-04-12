@@ -13,7 +13,7 @@ userCtrl.createUser = async (req,res) => {
         tLastName:req.body.tLastName,
         tLastName2:req.body.tLastName2,
         tEmail:req.body.tEmail,
-        tPassword:req.body.tPassword,
+        tPhone:req.body.tPhone
     });
     await newUsr.save();
     res.json({
